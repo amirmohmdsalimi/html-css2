@@ -1,0 +1,54 @@
+body {
+    font-family: Times, "Times New Roman", serif;
+    color: black;
+}
+header {
+    background-color: white;
+    color: black;
+    text-align: center;
+    padding: 10px;
+}
+.nav, footer {
+    display: none;
+}
+
+.main-wrapper {
+    margin: 0;
+    flex: none;
+}
+
+main {
+    margin-top: 0;
+}
+
+h2 mark {
+    background-color: transparent;
+}
+
+dialog {
+    border: 1px solid black;
+}
+
+canvas {
+    display: none;
+}
+
+form {
+    display: none;
+}
+
+fieldset {
+    border: 1px solid black;
+}
+
+figure img {
+    max-width: 100%;
+    height: auto;
+}
+aside dialog {
+    position: static;
+    display: block;
+    border: 1px solid black;
+    background: white;
+    color: black;
+}

@@ -1,0 +1,93 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.main-wrapper {
+    flex: 1;
+}
+
+.nav {
+    background-color: #333;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    padding: 20px 0;
+    text-align: center;
+    z-index: 100;
+}
+
+.nav a {
+    color: white;
+    padding: 0 20px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav a:hover {
+    color: #f8a488;
+}
+
+main {
+    margin-top: 80px;
+}
+
+h2 mark {
+    background-color: yellow;
+}
+
+dialog {
+    border: 2px solid #333;
+    padding: 20px;
+}
+
+canvas {
+    display: block;
+    margin: 20px auto;
+}
+
+form {
+    margin: 20px 0;
+}
+
+fieldset {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+input[type="submit"] {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #f8a488;
+}
+
+figure img {
+    max-width: 100%;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+}
