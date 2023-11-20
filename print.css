@@ -1,54 +1,112 @@
-body {
-    font-family: Times, "Times New Roman", serif;
-    color: black;
-}
-header {
-    background-color: white;
-    color: black;
-    text-align: center;
-    padding: 10px;
-}
-.nav, footer {
-    display: none;
-}
+@media print {
+    body {
+        font-family: Arial, sans-serif;
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        grid-template-areas: 
+            "header"
+            "main"
+            "footer";
+        background-color: white;
+        color: black;
+    }
 
-.main-wrapper {
-    margin: 0;
-    flex: none;
-}
+    header {
+        grid-area: header;
+        background-color: white;
+        color: black;
+        text-align: center;
+    }
 
-main {
-    margin-top: 0;
-}
+    .main-wrapper {
+        grid-area: main;
+    }
 
-h2 mark {
-    background-color: transparent;
-}
+    .nav {
+        display: none;
+    }
 
-dialog {
-    border: 1px solid black;
-}
+    .media-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 20px;
+        padding: 20px;
+        background-color: white;
+        box-shadow: none;
+    }
 
-canvas {
-    display: none;
-}
+    .media-row {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin-bottom: 20px;
+        align-items: center;
+    }
 
-form {
-    display: none;
-}
+    .nav a {
+        color: black;
+    }
 
-fieldset {
-    border: 1px solid black;
-}
+    main {
+        grid-area: main;
+        display: grid;
+        grid-template-rows: auto 1fr;
+        gap: 20px;
+    }
 
-figure img {
-    max-width: 100%;
-    height: auto;
-}
-aside dialog {
-    position: static;
-    display: block;
-    border: 1px solid black;
-    background: white;
-    color: black;
+    h2 mark {
+        background-color: white;
+        color: black;
+    }
+
+    dialog {
+        border: 2px solid black;
+        padding: 20px;
+    }
+
+    .form-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+    
+    .form-field {
+        display: flex;
+        flex-direction: column;
+    }
+
+    fieldset {
+        border: 1px solid black;
+        padding: 10px;
+    }
+
+    input[type="submit"] {
+        display: none;
+    }
+
+    figure img {
+        max-width: 100%;
+    }
+
+    footer {
+        grid-area: footer;
+        background-color: white;
+        color: black;
+        text-align: center;
+        padding: 20px 0;
+    }
+    
+    .grid-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .form-grid2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: auto;
+        gap: 20px;
+    }
 }
