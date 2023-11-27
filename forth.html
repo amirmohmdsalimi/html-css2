@@ -37,7 +37,7 @@
                             <label for="message">Message:</label>
                             <textarea id="message" name="message"></textarea>
                         </div>
-                        <input type="submit" value="Submit">
+                        <input type="submit" value="Submit" onclick="showMessage(event)">
                     </form>
                 </section>
             </article>
@@ -50,3 +50,9 @@
     </footer>
 </body>
 </html>
+<script>
+    function showMessage(event) {
+        event.preventDefault();
+        alert('thanks. I will answer you as soon as possible.');
+    }
+</script>
