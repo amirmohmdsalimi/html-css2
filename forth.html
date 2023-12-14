@@ -5,43 +5,49 @@
     <title>Contact Us - Programming Languages</title>
     <link rel="stylesheet" type="text/css" href="styles.css" media="screen">
     <link rel="stylesheet" type="text/css" href="print.css" media="print">
+    <style>
+        .hovered-link {
+            color: #ff0000; 
+        }
+        .focused-field {
+            background-color: #e7f4f9; 
+        }
+    </style>
 </head>
 <body>
-    <header>
+    <header id="main-header" class="nav-header">
         <nav>
             <div class="nav">
-                <a href="index.html">Home</a>
-                <a href="second.html">Page 2</a>
-                <a href="third.html">Page 3</a>
-                <a href="forth.html">Page 4</a>
+                <a href="index.html" id="homeLink">Home</a>
+                <a href="second.html" id="page2Link">Page 2</a>
+                <a href="third.html" id="page3Link">Page 3</a>
+                <a href="forth.html" id="page4Link">Page 4</a>
             </div>
         </nav>
-    </br>
-    </br>
-    <h1>Contact Us</h1>
+        <h1>Contact Us</h1>
     </header>
-        <main>
-            <article>
-                <section>
-                    <h2>Get in Touch</h2>
-                    <form class="form-grid2">
-                        <div class="form-field">
-                            <label for="name">Name:</label>
-                            <input type="text" id="name" name="name">
-                        </div>
-                        <div class="form-field">
-                            <label for="email">Email:</label>
-                            <input type="email" id="email" name="email">
-                        </div>
-                        <div class="form-field">
-                            <label for="message">Message:</label>
-                            <textarea id="message" name="message"></textarea>
-                        </div>
-                        <input type="submit" value="Submit" onclick="showMessage(event)">
-                    </form>
-                </section>
-            </article>
-        </main>
+    <main>
+        <article>
+            <section>
+                <h2>Get in Touch</h2>
+                <form class="form-grid2" id="contactForm">
+                    <div class="form-field">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name">
+                    </div>
+                    <div class="form-field">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email">
+                    </div>
+                    <div class="form-field">
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message"></textarea>
+                    </div>
+                    <input type="submit" value="Submit" id="submitBtn">
+                </form>
+            </section>
+        </article>
+    </main>
 
     <footer>
         <p>Copyright &copy; 2023. AmirmohammadSalimi.</p>
@@ -51,8 +57,33 @@
 </body>
 </html>
 <script>
-    function showMessage(event) {
+    document.getElementById('submitBtn').onclick = function(event) {
         event.preventDefault();
-        alert('thanks. I will answer you as soon as possible.');
-    }
+        alert('Thank you for contacting us. We will respond to you shortly.');
+    };
+
+    ['homeLink', 'page2Link', 'page3Link', 'page4Link'].forEach(function(id) {
+        var link = document.getElementById(id);
+        link.onmouseover = function() {
+            this.classList.add('hovered-link');
+        };
+        link.onmouseout = function() {
+            this.classList.remove('hovered-link');
+        };
+    });
+
+    ['name', 'email', 'message'].forEach(function(id) {
+        var field = document.getElementById(id);
+        field.onfocus = function() {
+            this.classList.add('focused-field');
+        };
+        field.onblur = function() {
+            this.classList.remove('focused-field');
+        };
+    });
+
+    document.getElementById('main-header').ondblclick = function() {
+        document.getElementById('contactForm').reset();
+        alert('The form has been reset.');
+    };
 </script>

@@ -1,112 +1,70 @@
 @media print {
-    body {
-        font-family: Arial, sans-serif;
-        display: grid;
-        grid-template-rows: auto 1fr auto;
-        grid-template-areas: 
-            "header"
-            "main"
-            "footer";
-        background-color: white;
-        color: black;
-    }
-
-    header {
-        grid-area: header;
-        background-color: white;
-        color: black;
-        text-align: center;
-    }
-
-    .main-wrapper {
-        grid-area: main;
-    }
-
-    .nav {
-        display: none;
-    }
-
-    .media-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: 20px;
-        padding: 20px;
-        background-color: white;
-        box-shadow: none;
-    }
-
-    .media-row {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
-        margin-bottom: 20px;
-        align-items: center;
-    }
-
-    .nav a {
-        color: black;
-    }
-
-    main {
-        grid-area: main;
-        display: grid;
-        grid-template-rows: auto 1fr;
-        gap: 20px;
-    }
-
-    h2 mark {
-        background-color: white;
-        color: black;
-    }
-
-    dialog {
-        border: 2px solid black;
-        padding: 20px;
-    }
-
-    .form-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 20px;
-    }
-    
-    .form-field {
-        display: flex;
-        flex-direction: column;
-    }
-
-    fieldset {
-        border: 1px solid black;
-        padding: 10px;
-    }
-
-    input[type="submit"] {
-        display: none;
-    }
-
-    figure img {
-        max-width: 100%;
-    }
-
+    body,
+    header,
+    .main-wrapper,
+    .nav,
+    main,
     footer {
-        grid-area: footer;
-        background-color: white;
-        color: black;
-        text-align: center;
-        padding: 20px 0;
+      color: black;
+      background: none;
+      box-shadow: none;
+      text-shadow: none;
     }
-    
-    .grid-wrapper {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
+  
+    body {
+      font-family: Arial, sans-serif;
+      display: block;
+      min-height: 0;
+      margin: 0;
+      padding: 0;
     }
-
+  
+    header,
+    .nav,
+    footer,
+    .nav a,
+    #showFormButton,
+    input[type="submit"],
+    #createObjectBtn {
+      display: none;
+    }
+  
+    main {
+      margin-top: 0;
+    }
+  
+    .media-container,
+    .media-row,
+    .grid-wrapper,
     .form-grid2 {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-auto-rows: auto;
-        gap: 20px;
+      display: block;
     }
-}
+  
+    dialog,
+    canvas,
+    .form-grid,
+    .grid-wrapper,
+    .form-grid2 {
+      border: none;
+    }
+  
+    .input-group,
+    .form-field {
+      margin-bottom: 5px;
+    }
+  
+    figure img {
+      max-width: 100%;
+      page-break-inside: avoid;
+    }
+  
+    h2 mark {
+      background-color: transparent;
+    }
+  
+    #objectDisplay {
+      background-color: #fff;
+      overflow: visible;
+      page-break-inside: avoid;
+    }
+  }

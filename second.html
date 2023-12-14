@@ -2,10 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>About Us - Programming Languages</title>
+    <title>Resources - Programming Languages</title>
     <link rel="stylesheet" type="text/css" href="styles.css" media="screen">
     <link rel="stylesheet" type="text/css" href="print.css" media="print">
-
+    <style>
+        #objectDisplay {
+            white-space: pre;
+            background-color: #f7f7f7;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-top: 10px;
+        }
+        .input-group {
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -17,34 +28,57 @@
                 <a href="forth.html">Page 4</a>
             </div>
         </nav>
-    </br>
-    </br>
-        <h1>About Us</h1>
+        <h1>Programming Resources</h1>
     </header>
-
     <main>
-        <article>
+        <article class="grid-wrapper">
+            <div class="input-group">
+                <label for="key1">نام (کلید۱):</label>
+                <input type="text" id="key1" name="key1">
+            </div>
+            <div class="input-group">
+                <label for="value1">مقدار (مقدار۱):</label>
+                <input type="text" id="value1" name="value1">
+            </div>
+            <div class="input-group">
+                <label for="key2">نام۲ (کلید ۲):</label>
+                <input type="text" id="key2" name="key2">
+            </div>
+            <div class="input-group">
+                <label for="value2">مقدار۲:</label>
+                <input type="text" id="value2" name="value2">
+            </div>
+            <div class="input-group">
+                <label for="key3">نام۳:</label>
+                <input type="text" id="key3" name="key3">
+            </div>
+            <div class="input-group">
+                <label for="value3">مقدار۳:</label>
+                <input type="text" id="value3" name="value3">
+            </div>
+            <div>
+                <button id="createObjectBtn">Create Object</button>
+            </div>
+            <pre id="objectDisplay"></pre>
         </article>
     </main>
 
     <footer>
         <p>Copyright &copy; 2023. AmirmohammadSalimi.</p>
         <time datetime="2023-11-13">Last Updated</time>
-        <wbr>
     </footer>
+    <script>
+        var objectsArray = [];
+
+        document.getElementById('createObjectBtn').addEventListener('click', function() {
+            var obj = {
+                [document.getElementById('key1').value]: document.getElementById('value1').value,
+                [document.getElementById('key2').value]: document.getElementById('value2').value,
+                [document.getElementById('key3').value]: document.getElementById('value3').value
+            };
+            objectsArray.push(obj);
+            document.getElementById('objectDisplay').textContent = JSON.stringify(objectsArray, null, 2);
+        });
+    </script>
 </body>
 </html>
-<script>
-    
-    let section = document.createElement("section");
-    let h2 = document.createElement("h2");
-    let p = document.createElement("p");
-
-    h2.textContent = "AmirmohammadSalimi";
-    p.textContent = "I aim to provide comprehensive and up-to-date information on the most popular programming languages in 2023.";
-
-    section.appendChild(h2);
-    section.appendChild(p);
-
-    document.querySelector('main article').appendChild(section);
-</script>

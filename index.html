@@ -25,7 +25,7 @@
             <section>
                 <h2><mark>Top Programming Languages in 2023</mark></h2>
                 <details>
-                    <summary>Unfold to see the details</summary>
+                    <summary onclick="showMessage3(event)">Unfold to see the details</summary>
                     <p>Here we present a list of the most popular programming languages in 2023.</p>
                 </details>
             </section>
@@ -38,6 +38,7 @@
             <form>
                 <fieldset>
                     <legend>Share Your Thoughts</legend>
+                    <button type="submit" id="showFormButton"  onclick="showMessage2(event)">Show Form</button>
                     <div class="form-grid">
                         <div class="form-field">
                             <label for="username">Name:</label>
@@ -100,6 +101,24 @@
         event.preventDefault();
         alert('thanks for sharing your thooughts');
     }
+    function showMessage2(event) {
+        event.preventDefault();
+        alert('in this form you can share your thoughts with me');
+    }
+    function showMessage3(event) {
+        alert('unfolded');
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+    var showFormButton = document.getElementById('showFormButton');
+    var formGrid = document.querySelector('.form-grid');
+    var form = document.querySelector('form');
+
+    showFormButton.addEventListener('click', function() {
+        formGrid.style.display = 'block'; 
+        this.style.display = 'none';
+    });
+
+});
 </script>
 <script>
     var canvas = document.getElementById("myCanvas");
@@ -111,5 +130,25 @@
     for(let i = 0; i < items.length; i++){
         items[i].style.height="200px";
         items[i].style.backgroundColor = '#8a8888';
+    }
+</script>
+<script>
+    var heading = document.querySelector('h1');
+    heading.textContent = 'Updated Programming Languages Header';
+
+    var newParagraph = document.createElement('p');
+    newParagraph.textContent = 'This is a new paragraph for the footer.';
+    var footer = document.querySelector('footer');
+    footer.appendChild(newParagraph);
+
+    var navLinks = document.querySelectorAll('.nav a');
+    navLinks.forEach(function(link) {
+        link.style.color = 'blue';
+    });
+
+    var formGridElements = document.getElementsByClassName('form-grid');
+    for (let i = 0; i < formGridElements.length; i++) {
+        formGridElements[i].style.height = '200px';
+        formGridElements[i].style.backgroundColor = '#8a8888';
     }
 </script>

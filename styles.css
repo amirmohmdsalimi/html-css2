@@ -24,6 +24,10 @@ header {
 }
 
 .nav {
+    display: block;
+}
+
+.nav nav {
     background-color: #333;
     position: fixed;
     width: 100%;
@@ -35,6 +39,11 @@ header {
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
 }
+
+.nav h1 {
+    margin-top: 30px;
+}
+
 .media-container {
     display: flex;
     flex-direction: column;
@@ -53,6 +62,7 @@ header {
     margin-bottom: 20px;
     align-items: center;
 }
+
 .nav a {
     color: white;
     padding: 0 20px;
@@ -87,7 +97,7 @@ canvas {
 }
 
 .form-grid {
-    display: grid;
+    display: none;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
 }
@@ -118,6 +128,18 @@ input[type="submit"]:hover {
     background-color: #f8a488;
 }
 
+#showFormButton {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    grid-column: span 2;
+    width: auto;
+    margin-top: auto;
+}
+
 figure img {
     max-width: 100%;
 }
@@ -130,11 +152,13 @@ footer {
     padding: 20px 0;
     width: 100%;
 }
+
 .grid-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
 }
+
 .form-grid2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -142,3 +166,31 @@ footer {
     gap: 20px;
 }
 
+#objectDisplay {
+    white-space: pre;
+    background-color: #f7f7f7;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 10px;
+    overflow: auto;
+}
+
+.input-group {
+    margin-bottom: 10px;
+}
+
+#createObjectBtn {
+    display: block;
+    width: auto;
+    padding: 10px;
+    margin: 0;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#createObjectBtn:hover {
+    background-color: #f8a488;
+}
